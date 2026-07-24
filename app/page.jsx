@@ -93,12 +93,31 @@ function DashboardPreview() {
 
 function App() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
     if (!form.get('name') || !form.get('phone')) return;
-    setSubmitted(true);
+
+    setIsSubmitting(true);
+    setSubmitError('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(form)),
+      });
+
+      if (!response.ok) throw new Error('Unable to send contact request');
+      setSubmitted(true);
+    } catch {
+      setSubmitError('전송에 실패했어요. 잠시 후 다시 시도해주세요.');
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -154,7 +173,7 @@ function App() {
         </RevealSection>
 
         <RevealSection id="contact" className="section contact-section">
-          <div className="container narrow"><div className="section-heading centered"><h2>지금, 무료로 진단받아보세요</h2><p>간단한 정보만 남겨주시면 1영업일 내로 연락드려요</p></div>{submitted ? <div className="submission-complete"><div className="icon-box"><Check /></div><h3>신청이 완료되었어요</h3><p>빠르게 확인 후 1영업일 내로 연락드릴게요</p></div> : <form className="contact-form" onSubmit={handleSubmit}><div className="form-grid"><input name="name" type="text" placeholder="이름" required /><input name="company" type="text" placeholder="회사명" required /></div><input name="phone" type="tel" placeholder="연락처" required /><textarea name="message" placeholder="어떤 업무를 시스템화하고 싶으신가요 (선택)" rows="4" /><button type="submit">무료 상담 신청하기</button></form>}</div>
+          <div className="container narrow"><div className="section-heading centered"><h2>지금, 무료로 진단받아보세요</h2><p>간단한 정보만 남겨주시면 1영업일 내로 연락드려요</p></div>{submitted ? <div className="submission-complete"><div className="icon-box"><Check /></div><h3>신청이 완료되었어요</h3><p>빠르게 확인 후 1영업일 내로 연락드릴게요</p></div> : <form className="contact-form" onSubmit={handleSubmit}><div className="form-grid"><input name="name" type="text" placeholder="이름" required /><input name="company" type="text" placeholder="회사명" required /></div><input name="phone" type="tel" placeholder="연락처" required /><textarea name="message" placeholder="어떤 업무를 시스템화하고 싶으신가요 (선택)" rows="4" /><input className="honeypot" name="website" tabIndex="-1" autoComplete="off" aria-hidden="true" /><button type="submit" disabled={isSubmitting}>{isSubmitting ? '전송 중...' : '무료 상담 신청하기'}</button>{submitError && <p className="form-error" role="alert">{submitError}</p>}</form>}</div>
         </RevealSection>
       </main>
 

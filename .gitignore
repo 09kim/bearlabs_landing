@@ -5,3 +5,6 @@ dist
 .DS_Store
 BearLabs Landing (Standalone) (1).html
 Moneygraphy Font/
+.env
+.env.*
+!.env.example
