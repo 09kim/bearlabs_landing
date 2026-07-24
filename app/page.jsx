@@ -125,8 +125,7 @@ function App() {
       <header className="site-header">
         <div className="container nav-content">
           <a className="brand" href="#top" aria-label="베어랩스 홈">
-            <img src="/assets/bearlabs-logo.png" alt="" />
-            <span>베어랩스</span>
+            <img className="brand-logo" src="/assets/bearlabs-logo.png" alt="BearLabs" />
           </a>
           <nav className="nav-links" aria-label="주요 메뉴">
             <a href="#services">서비스</a><a href="#process">프로세스</a><a href="#portfolio">포트폴리오</a><a href="#pricing">견적안내</a>
@@ -177,7 +176,7 @@ function App() {
         </RevealSection>
       </main>
 
-      <footer><div className="container footer-content"><div className="brand"><img src="/assets/bearlabs-logo.png" alt="베어랩스" /><span>베어랩스</span></div><p>© 2026 BearLabs. All rights reserved.</p></div></footer>
+      <footer><div className="container footer-content"><div className="brand"><img className="brand-logo" src="/assets/bearlabs-logo.png" alt="BearLabs" /></div><p>© 2026 BearLabs. All rights reserved.</p></div></footer>
     </div>
   );
 }
