@@ -77,7 +77,7 @@ export default async function PortfolioProjectPage({ params }) {
         <section className="case-section case-showcase-section">
           <div className="container">
             <div className="case-section-heading"><span className="case-section-label">PROJECT SCREENS</span><h2>구축 화면</h2></div>
-            <div className="case-showcase-image"><img src={project.detailImage} alt={project.detailImageAlt} loading="lazy" /></div>
+            {project.detailImages ? <div className="case-showcase-gallery">{project.detailImages.map((image, index) => <div className="case-showcase-image" key={image}><img src={image} alt={`${project.detailImageAlt} ${index + 1}`} loading="lazy" /></div>)}</div> : <div className="case-showcase-image"><img src={project.detailImage} alt={project.detailImageAlt} loading="lazy" /></div>}
           </div>
         </section>
 

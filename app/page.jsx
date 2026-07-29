@@ -31,10 +31,10 @@ const painPoints = [
 ];
 
 const services = [
-  { icon: FolderKanban, tone: 'blue', title: 'ERP · 사내관리 시스템', desc: '발주, 재고, 인사, 회계까지, 흩어진 업무를 하나로 모아요' },
-  { icon: Users, tone: 'green', title: 'CRM · 고객관리 자동화', desc: '고객 데이터 수집부터 마케팅 자동화까지 한 번에' },
-  { icon: Package, tone: 'yellow', title: 'WMS · 물류·재고관리', desc: '입출고, 실시간 재고 추적으로 오배송을 줄여요' },
-  { icon: Bot, tone: 'blue', title: 'AI 업무 자동화', desc: '반복 업무는 AI에게, 사람은 중요한 일에 집중하도록' },
+  { icon: FolderKanban, tone: 'blue', title: 'ERP · 사내관리 시스템', desc: '발주, 재고, 인사, 회계까지, 흩어진 업무를 하나로 모아요', href: '/erp-development' },
+  { icon: Users, tone: 'green', title: 'CRM · 고객관리 자동화', desc: '고객 데이터 수집부터 마케팅 자동화까지 한 번에', href: '/crm-automation' },
+  { icon: Package, tone: 'yellow', title: 'WMS · 물류·재고관리', desc: '입출고, 실시간 재고 추적으로 오배송을 줄여요', href: '/wms-development' },
+  { icon: Code2, tone: 'blue', title: '홈페이지 · 웹서비스 개발', desc: '기업 소개 홈페이지부터 관리자 페이지까지 목적에 맞게 만들어요', href: '/web-development' },
 ];
 
 const processSteps = [
@@ -270,7 +270,7 @@ function App() {
         </RevealSection>
 
         <RevealSection id="services" className="section">
-          <div className="container"><div className="section-heading"><span>무엇을 만들어 드리나요</span><h2>회사 상황에 맞는<br />시스템만, 정확하게</h2></div><div className="grid grid-two">{services.map(({ icon: Icon, tone, title, desc }, index) => <RevealCard className="service-card" delay={index * 0.08} key={title}><div className={`icon-box ${tone}`}><Icon /></div><div><h3>{title}</h3><p>{desc}</p></div></RevealCard>)}</div></div>
+          <div className="container"><div className="section-heading"><span>무엇을 만들어 드리나요</span><h2>회사 상황에 맞는<br />시스템만, 정확하게</h2></div><div className="grid grid-two">{services.map(({ icon: Icon, tone, title, desc, href }, index) => <RevealCard className="service-card" delay={index * 0.08} key={title}><a className="service-card-link" href={href}><div className={`icon-box ${tone}`}><Icon /></div><div><h3>{title}</h3><p>{desc}</p></div></a></RevealCard>)}</div></div>
         </RevealSection>
 
         <RevealSection className="section selection-section">
@@ -282,7 +282,7 @@ function App() {
         </RevealSection>
 
         <RevealSection id="portfolio" className="section">
-          <div className="container"><div className="section-heading"><span>포트폴리오</span><h2>이런 시스템을 만들었습니다</h2></div><div className="grid grid-three">{portfolioProjects.map((item, index) => <PortfolioCard item={item} index={index} key={item.slug} />)}</div></div>
+          <div className="container"><div className="section-heading"><span>포트폴리오</span><h2>이런 시스템을 만들었습니다</h2></div><div className="grid grid-four">{portfolioProjects.map((item, index) => <PortfolioCard item={item} index={index} key={item.slug} />)}</div></div>
         </RevealSection>
 
         <RevealSection id="pricing" className="section pricing-section">

@@ -6,6 +6,26 @@ export default function sitemap() {
       priority: 1,
     },
     {
+      url: 'https://www.bearlabs.kr/erp-development',
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: 'https://www.bearlabs.kr/wms-development',
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: 'https://www.bearlabs.kr/crm-automation',
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: 'https://www.bearlabs.kr/web-development',
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: 'https://www.bearlabs.kr/portfolio/pipe-erp',
       changeFrequency: 'monthly',
       priority: 0.8,
@@ -17,6 +37,11 @@ export default function sitemap() {
     },
     {
       url: 'https://www.bearlabs.kr/portfolio/rdms',
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://www.bearlabs.kr/portfolio/wytp',
       changeFrequency: 'monthly',
       priority: 0.8,
     },

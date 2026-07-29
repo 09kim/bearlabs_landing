@@ -53,6 +53,34 @@ export const portfolioProjects = [
       '엑셀 업로드·다운로드 지원',
     ],
   },
+  {
+    slug: 'wytp',
+    category: '기업 웹사이트',
+    title: '우영일렉트로닉스 기업 홈페이지',
+    summary: '기업 소개와 제품 카탈로그, 고객지원, 관리자(CMS)까지 연결한 우영일렉트로닉스의 반응형 기업 웹사이트입니다.',
+    image: '/portfolio/wytp.jpg',
+    imageAlt: '우영일렉트로닉스 기업 홈페이지 메인 화면',
+    detailImages: [
+      '/portfolio/wytp-01.jpg',
+      '/portfolio/wytp-02.jpg',
+      '/portfolio/wytp-03.jpg',
+      '/portfolio/wytp-04.jpg',
+      '/portfolio/wytp-05.jpg',
+      '/portfolio/wytp-06.jpg',
+      '/portfolio/wytp-07.jpg',
+      '/portfolio/wytp-08.jpg',
+      '/portfolio/wytp-09.jpg',
+    ],
+    detailImageAlt: '우영일렉트로닉스 기업 홈페이지와 관리자 화면',
+    overview: '회사와 제품의 신뢰도를 전달하는 소개 구조를 설계하고, 제품·공지·Q&A·자료실·문의 현황을 운영자가 직접 관리할 수 있는 관리자 화면까지 구축했습니다.',
+    capabilities: [
+      '기업·제품·기술력 중심의 정보 구조 설계',
+      '제품 카테고리와 상세 페이지 구성',
+      '공지·Q&A·자료실·문의 관리 CMS',
+      'PC·태블릿·모바일 반응형 화면',
+      '검색 노출을 위한 메타데이터와 사이트맵 구성',
+    ],
+  },
 ];
 
 export function getPortfolioProject(slug) {
