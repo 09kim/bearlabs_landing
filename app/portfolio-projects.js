@@ -6,6 +6,8 @@ export const portfolioProjects = [
     summary: '현장 배관·누수 서비스의 문의 접수부터 기사 배차, 공사 결과, 정산까지 하나의 흐름으로 관리하는 시스템입니다.',
     image: '/portfolio/pipe-erp.png',
     imageAlt: '배관 서비스 통합 ERP 대시보드 화면',
+    detailImage: '/portfolio/pipe-erp-detail.png',
+    detailImageAlt: '문의·배차·정산 통합 ERP 포트폴리오 화면',
     overview: '지역과 작업 유형에 따라 배차를 관리하고, 현장 진행 상황과 매출 데이터를 운영 화면에서 바로 확인할 수 있도록 구축했습니다.',
     capabilities: [
       '문의 접수와 지역 기반 자동 배차',
@@ -17,12 +19,14 @@ export const portfolioProjects = [
   },
   {
     slug: 'achievement',
-    category: '예약·서비스업 ERP',
-    title: '예약·견적·정산 올인원 시스템',
-    summary: '서비스업 운영에 필요한 스케줄, 견적, 고객, 정산 업무를 웹과 모바일에서 통합 관리하는 ERP입니다.',
+    category: '스타일리스트 에이전시',
+    title: '스타일리스트 에이전시 관리 시스템',
+    summary: '스타일리스트 에이전시의 스케줄, 견적, 고객, 정산 업무를 웹과 모바일에서 통합 관리하는 시스템입니다.',
     image: '/portfolio/achievement.png',
-    imageAlt: '예약·견적·정산 올인원 시스템의 스케줄 화면',
-    overview: '예약 일정과 고객 정보를 연결하고, 견적서 발행부터 정산과 세금계산서 처리까지 이어지는 반복 업무를 한곳에 모았습니다.',
+    imageAlt: '스타일리스트 에이전시 관리 시스템의 스케줄 화면',
+    detailImage: '/portfolio/achievement-detail.png',
+    detailImageAlt: '스타일리스트 에이전시 관리 시스템 포트폴리오 화면',
+    overview: '스타일리스트 일정과 고객 정보를 연결하고, 견적서 발행부터 정산과 세금계산서 처리까지 이어지는 반복 업무를 한곳에 모았습니다.',
     capabilities: [
       '월간 스케줄과 예약 현황 관리',
       '견적서·PDF 발행과 이력 관리',
@@ -38,6 +42,8 @@ export const portfolioProjects = [
     summary: '상품, 발주, 재고, 출고, 정산을 역할별 화면으로 운영할 수 있도록 구축한 유통·물류 ERP입니다.',
     image: '/portfolio/rdms.png',
     imageAlt: '유통·물류 통합관리 시스템 화면',
+    detailImage: '/portfolio/rdms-detail.png',
+    detailImageAlt: '유통·물류 통합관리 시스템 포트폴리오 화면',
     overview: '유통·물류 업무의 흐름을 하나로 연결해 담당자별로 필요한 정보와 작업을 빠르게 확인할 수 있도록 설계했습니다.',
     capabilities: [
       '상품·재고·입출고 통합 관리',

@@ -74,6 +74,13 @@ export default async function PortfolioProjectPage({ params }) {
           </div>
         </section>
 
+        <section className="case-section case-showcase-section">
+          <div className="container">
+            <div className="case-section-heading"><span className="case-section-label">PROJECT SCREENS</span><h2>구축 화면</h2></div>
+            <div className="case-showcase-image"><img src={project.detailImage} alt={project.detailImageAlt} loading="lazy" /></div>
+          </div>
+        </section>
+
         <section className="case-cta-section">
           <div className="container case-cta-content"><div><span>YOUR NEXT SYSTEM</span><h2>우리 회사 업무에도<br />맞는 시스템이 필요하다면</h2></div><Link className="case-cta-link" href="/#contact">무료 상담 신청 <ArrowRight /></Link></div>
         </section>
