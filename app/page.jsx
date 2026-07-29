@@ -12,6 +12,7 @@ import {
   Users,
   Wrench,
 } from 'lucide-react';
+import { portfolioProjects } from './portfolio-projects';
 
 const painPoints = [
   { icon: FileSpreadsheet, title: '발주서, 재고 현황이 전부 엑셀 파일 어딘가에', desc: '담당자 한 명이 자리를 비우면 업무가 멈춰요' },
@@ -32,12 +33,6 @@ const processSteps = [
   { num: '02', title: '프로토타입 설계', desc: '실제 화면으로 먼저 확인, 방향이 다르면 여기서 바꿔요' },
   { num: '03', title: '기능 정의 & 개발', desc: '필요한 기능만 정확히, 군더더기 없이 만들어요' },
   { num: '04', title: '배포 & 운영 지원', desc: '런칭 후에도 함께 다듬어가요' },
-];
-
-const portfolio = [
-  { tag: 'ERP', tone: 'erp', title: '패션 쇼핑몰 발주·재고관리 시스템', desc: '엑셀로 관리하던 발주와 재고를 하나의 시스템으로 통합' },
-  { tag: 'WMS', tone: 'wms', title: '물류 대행사 WMS 구축', desc: '입출고 프로세스 자동화로 오배송률 개선' },
-  { tag: 'CRM', tone: 'crm', title: '유통 에이전시 CRM + 자동화', desc: '고객 데이터 기반 마케팅 자동화 파이프라인 구축' },
 ];
 
 const quoteSteps = [
@@ -165,7 +160,7 @@ function App() {
         </RevealSection>
 
         <RevealSection id="portfolio" className="section">
-          <div className="container"><div className="section-heading"><span>포트폴리오</span><h2>이런 회사들과 함께했습니다</h2></div><div className="grid grid-three">{portfolio.map((item) => <article className="portfolio-card" key={item.tag}><div className={`portfolio-image ${item.tone}`}><span>{item.tag}</span></div><div><h3>{item.title}</h3><p>{item.desc}</p></div></article>)}</div></div>
+          <div className="container"><div className="section-heading"><span>포트폴리오</span><h2>이런 시스템을 만들었습니다</h2></div><div className="grid grid-three">{portfolioProjects.map((item) => <article className="portfolio-card" key={item.slug}><a href={`/portfolio/${item.slug}`}><div className="portfolio-image"><img src={item.image} alt={item.imageAlt} /></div><div><span className="portfolio-category">{item.category}</span><h3>{item.title}</h3><p>{item.summary}</p></div></a></article>)}</div></div>
         </RevealSection>
 
         <RevealSection id="pricing" className="section pricing-section">
