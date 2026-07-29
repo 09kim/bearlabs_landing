@@ -2,13 +2,16 @@
 
 import { useEffect, useRef, useState } from 'react';
 import {
+  ArrowRight,
   BarChart3,
   Bot,
   Check,
   FileSpreadsheet,
   FolderKanban,
   Keyboard,
+  MessageCircle,
   Package,
+  Phone,
   Users,
   Wrench,
 } from 'lucide-react';
@@ -68,19 +71,25 @@ function RevealSection({ children, className = '', id }) {
   return <section ref={ref} id={id} className={`reveal ${visible ? 'is-visible' : ''} ${className}`}>{children}</section>;
 }
 
-function DashboardPreview() {
+function SystemFlowPreview() {
   return (
-    <div className="dashboard-wrap">
-      <div className="dashboard">
-        <div className="traffic-lights"><span /><span /><span /></div>
-        <div className="stock-card">
-          <div className="dashboard-label">재고 현황</div>
-          <div className="bar-chart"><i /><i /><i /><i /><i /><i /></div>
+    <div className="system-flow-preview" aria-label="흩어진 업무를 맞춤 시스템으로 통합하는 흐름">
+      <div className="flow-source">
+        <span className="flow-title">흩어진 업무</span>
+        <div className="flow-source-item spreadsheet"><FileSpreadsheet /><span>엑셀 파일</span></div>
+        <div className="flow-source-item chat"><MessageCircle /><span>카카오톡</span></div>
+        <div className="flow-source-item phone"><Phone /><span>전화·수기입력</span></div>
+      </div>
+      <div className="flow-connector" aria-hidden="true"><span /><ArrowRight /></div>
+      <div className="flow-system">
+        <div className="flow-window-bar"><div><i /><i /><i /></div><span>맞춤 업무 시스템</span></div>
+        <div className="flow-modules">
+          <div><Users /><span>고객 관리</span></div>
+          <div><FileSpreadsheet /><span>견적·정산</span></div>
+          <div><Package /><span>재고·발주</span></div>
+          <div><Bot /><span>AI 자동화</span></div>
         </div>
-        <div className="dashboard-stats">
-          <div className="dashboard-stat"><div className="dashboard-label">오늘 발주</div><strong>128건</strong></div>
-          <div className="dashboard-stat"><div className="dashboard-label">처리 상태</div><strong className="success">정상</strong></div>
-        </div>
+        <div className="flow-automation"><Bot /><span>반복 업무 자동화</span><i>ON</i></div>
       </div>
     </div>
   );
@@ -140,7 +149,7 @@ function App() {
               <div className="hero-actions"><a className="button primary" href="#contact">무료로 진단받기</a><a className="button secondary" href="#portfolio">포트폴리오 보기</a></div>
               <p className="hero-note">상담은 무료, 첫 프로토타입까지 평균 2주가 걸려요</p>
             </div>
-            <DashboardPreview />
+            <SystemFlowPreview />
           </div>
         </section>
 
