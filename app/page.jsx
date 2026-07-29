@@ -111,7 +111,7 @@ function App() {
   async function handleSubmit(event) {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
-    if (!form.get('name') || !form.get('phone')) return;
+    if (!form.get('name') || !form.get('phone') || !form.get('privacyConsent')) return;
 
     setIsSubmitting(true);
     setSubmitError('');
@@ -196,7 +196,7 @@ function App() {
         </RevealSection>
 
         <RevealSection id="contact" className="section contact-section">
-          <div className="container narrow"><div className="section-heading centered"><h2>지금, 무료로 진단받아보세요</h2><p>간단한 정보만 남겨주시면 1영업일 내로 연락드려요</p></div>{submitted ? <div className="submission-complete"><div className="icon-box"><Check /></div><h3>신청이 완료되었어요</h3><p>빠르게 확인 후 1영업일 내로 연락드릴게요</p></div> : <form className="contact-form" onSubmit={handleSubmit}><div className="form-grid"><input name="name" type="text" placeholder="이름" required /><input name="company" type="text" placeholder="회사명" required /></div><input name="phone" type="tel" placeholder="연락처" required /><textarea name="message" placeholder="어떤 업무를 시스템화하고 싶으신가요 (선택)" rows="4" /><input className="honeypot" name="website" tabIndex="-1" autoComplete="off" aria-hidden="true" /><button type="submit" disabled={isSubmitting}>{isSubmitting ? '전송 중...' : '무료 상담 신청하기'}</button>{submitError && <p className="form-error" role="alert">{submitError}</p>}</form>}</div>
+          <div className="container narrow"><div className="section-heading centered"><h2>지금, 무료로 진단받아보세요</h2><p>간단한 정보만 남겨주시면 1영업일 내로 연락드려요</p></div>{submitted ? <div className="submission-complete"><div className="icon-box"><Check /></div><h3>신청이 완료되었어요</h3><p>빠르게 확인 후 1영업일 내로 연락드릴게요</p></div> : <form className="contact-form" onSubmit={handleSubmit}><div className="form-grid"><input name="name" type="text" placeholder="이름" required /><input name="company" type="text" placeholder="회사명" required /></div><input name="phone" type="tel" placeholder="연락처" required /><textarea name="message" placeholder="어떤 업무를 시스템화하고 싶으신가요 (선택)" rows="4" /><div className="privacy-consent"><input id="privacy-consent" name="privacyConsent" type="checkbox" required /><label htmlFor="privacy-consent">개인정보 수집 및 이용에 동의합니다 <em>(필수)</em></label></div><p className="privacy-notice">수집 항목: 이름, 회사명, 연락처, 문의 내용 · 이용 목적: 상담 및 답변 · 보유 기간: 문의 처리 완료 후 1년 · 동의를 거부할 수 있으며, 이 경우 문의 접수가 어렵습니다.</p><input className="honeypot" name="website" tabIndex="-1" autoComplete="off" aria-hidden="true" /><button type="submit" disabled={isSubmitting}>{isSubmitting ? '전송 중...' : '무료 상담 신청하기'}</button>{submitError && <p className="form-error" role="alert">{submitError}</p>}</form>}</div>
         </RevealSection>
       </main>
 

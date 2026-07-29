@@ -23,8 +23,9 @@ export async function POST(request) {
   const company = getValue(body.company, 160);
   const phone = getValue(body.phone, 100);
   const message = getValue(body.message, 5000);
+  const privacyConsent = body.privacyConsent === true || body.privacyConsent === 'on';
 
-  if (!name || !company || !phone) {
+  if (!name || !company || !phone || !privacyConsent) {
     return Response.json({ error: 'Missing required fields' }, { status: 400 });
   }
 
