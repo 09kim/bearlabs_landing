@@ -1,6 +1,6 @@
 import './globals.css';
 
-const siteUrl = 'https://bearlabs.kr';
+const siteUrl = 'https://www.bearlabs.kr';
 
 export const metadata = {
   metadataBase: new URL(siteUrl),

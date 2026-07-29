@@ -5,7 +5,7 @@ export default function robots() {
       allow: '/',
       disallow: '/api/',
     },
-    sitemap: 'https://bearlabs.kr/sitemap.xml',
-    host: 'https://bearlabs.kr',
+    sitemap: 'https://www.bearlabs.kr/sitemap.xml',
+    host: 'https://www.bearlabs.kr',
   };
 }
