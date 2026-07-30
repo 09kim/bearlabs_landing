@@ -56,8 +56,8 @@ export const portfolioProjects = [
   {
     slug: 'wytp',
     category: '기업 웹사이트',
-    title: '우영일렉트로닉스 기업 홈페이지',
-    summary: '기업 소개와 제품 카탈로그, 고객지원, 관리자(CMS)까지 연결한 우영일렉트로닉스의 반응형 기업 웹사이트입니다.',
+    title: '기업 소개 웹사이트',
+    summary: '기업 소개와 제품 카탈로그, 고객지원, 관리자(CMS)까지 연결한 반응형 기업 웹사이트입니다.',
     image: '/portfolio/wytp.jpg',
     imageAlt: '우영일렉트로닉스 기업 홈페이지 메인 화면',
     detailImages: [
